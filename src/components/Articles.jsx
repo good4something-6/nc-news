@@ -13,7 +13,7 @@ const Articles = () => {
 
   return (
     <section name="Articles List">
-      <header className="App-header">Current Articles</header>
+      <header className="App-header">Latest Articles</header>
       <div id="articleListBox">
         {articlesList.map((ele) => {
           return (
@@ -23,7 +23,9 @@ const Articles = () => {
                 <li className="articleCardTopic">topic: {ele.topic}</li>
                 <li className="articleCardCreated">Date: {ele.created_at}</li>
                 <li className="articleCardVotes">votes: {ele.votes}</li>
-                <button className="articleCardViewButton">View</button>
+                <li className="articleCardButtonLi">
+                  <button className="articleCardViewButton">View News</button>
+                </li>
               </ul>
             </div>
           );

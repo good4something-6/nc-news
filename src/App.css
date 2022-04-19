@@ -1,9 +1,22 @@
 .App {
   text-align: center;
+  background-color: rgb(195, 21, 15);
+}
+
+h1 {
+  font-size: 4em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.App-header {
+  font-size: 4em;
 }
 
 ul {
   list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 #articleListBox {
@@ -13,10 +26,11 @@ ul {
   flex-wrap: wrap;
   justify-content: center;
   gap: 40px 10px;
+  margin-top: 1em;
 }
 
 .articleCard {
-  background: #e46058;
+  background: #c25e59;
   padding: 0.4rem;
   margin: 0.2rem;
   width: 20%;
@@ -28,24 +42,47 @@ ul {
 
 .articleCardTitle {
   font-size: smaller;
+  padding: 0.7em;
   margin-bottom: 20px;
   text-align: left;
+  background-color: rgb(250, 231, 203);
+  border-radius: 0.5em 0.5em 0.2em 0.2em;
+  border-bottom: 5px solid rgb(121, 87, 87);
+  min-height: 200px;
 }
 
 .articleCardTopic {
   font-size: smaller;
   text-align: right;
+  margin-right: 20px;
 }
 
 .articleCardCreated {
   font-size: small;
   text-align: right;
+  margin-right: 20px;
 }
 
 .articleCardVotes {
   font-size: smaller;
   text-align: right;
+  margin-right: 20px;
 }
 
 .articleCardViewButton {
+  background-color: rgb(250, 231, 203);
+  border: none;
+  color: black;
+  margin-top: 10px;
+  padding: 15px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 0.6em;
+}
+
+.articleCardButtonLi {
+  text-align: right;
+  margin-right: 20px;
 }
