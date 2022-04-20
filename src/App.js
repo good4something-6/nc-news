@@ -13,6 +13,7 @@ function App() {
     <div className="App">
       <h1>NC NEWS</h1>
       <Topics
+        topicFilter={topicFilter}
         setTopicFilter={setTopicFilter}
         topicsList={topicsList}
         setTopicsList={setTopicsList}
@@ -20,11 +21,15 @@ function App() {
       <Routes>
         {/* <Route path="/" element={<Articles />} /> */}
         <Route path="/articles/:articleID" element={<SingleArticle />} />
-        <Route key="NO FILTER" path="/" element={<Articles />} />
+        <Route
+          key="NO FILTER"
+          path="/"
+          element={<Articles setTopicFilter={setTopicFilter} />}
+        />
         <Route
           key="topicSlug"
           path={`/topic/:topicSlug`}
-          element={<Articles />}
+          element={<Articles setTopicFilter={setTopicFilter} />}
         />
       </Routes>
     </div>
