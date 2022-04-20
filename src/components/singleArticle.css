@@ -1,0 +1,108 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 3fr 4fr 5fr;
+  grid-auto-rows: minmax(50px, auto);
+}
+
+.grid-item {
+  font-weight: normal;
+  border-radius: 20px;
+  padding: 1rem;
+  margin: 1rem;
+  text-align: left;
+}
+
+#gridBackground {
+  background: #c25e59;
+  grid-row-start: 1;
+  grid-row-end: 5;
+  grid-column-start: 2;
+  grid-column-end: 5;
+}
+
+#gridTitle {
+  background: #c25e59;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 2;
+  grid-column-end: 5;
+  font-size: 2rem;
+  font-weight: bold;
+  border-bottom: 3px solid rgb(163, 105, 105);
+  border-right: 3px solid rgb(163, 105, 105);
+  border-left: 3px solid rgb(163, 105, 105);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#gridBody {
+  background: rgb(250, 231, 203);
+  grid-row-start: 3;
+  grid-row-end: 5;
+  grid-column-start: 2;
+  grid-column-end: 5;
+  font-size: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+#gridAuthor {
+  background: rgb(250, 231, 203);
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  font-size: 1rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+#gridTopic {
+  background: rgb(250, 231, 203);
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  font-size: 1rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-left: 2rem;
+}
+#gridCreated {
+  background: rgb(250, 231, 203);
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 4;
+  grid-column-end: 5;
+  font-size: 1rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-right: 2rem;
+}
+
+#gridVotes {
+  background: #c25e59;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  font-size: 1rem;
+}
+
+#gridComments {
+  background: #c25e59;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  font-size: 1rem;
+}
+
+#gridComments > * {
+  text-align: center;
+}
+#gridVotes > * {
+  text-align: center;
+}
