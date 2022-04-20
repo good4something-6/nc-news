@@ -1,29 +1,28 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { getArticles } from "../api";
 
-const Articles = ({ topicFilter }) => {
+const Articles = () => {
   const [articlesList, setArticlesList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const { topicSlug } = useParams();
+
   useEffect(() => {
-    getArticles().then((articles) => {
+    getArticles(topicSlug).then((articles) => {
       setArticlesList(articles);
       setIsLoading(false);
     });
-  }, []);
-
-  const filteredList = articlesList.filter((ele) => {
-    return !topicFilter || ele.topic === topicFilter;
-  });
+  }, [topicSlug]);
 
   return (
     <section name="Articles List">
       <header className="App-header">
-        Latest Articles for {!topicFilter ? "ALL topics" : `'${topicFilter}'`}
+        Latest Articles for {!topicSlug ? "ALL topics" : `'${topicSlug}'`}
       </header>
       {isLoading ? <p className="App-header">Loading Articles</p> : null}
       <div id="articleListBox">
-        {filteredList.map((ele) => {
+        {articlesList.map((ele) => {
           return (
             <div key={"articleCard" + ele.article_id} className="articleCard">
               <ul>

@@ -18,15 +18,11 @@ function App() {
       />
       <Routes>
         <Route key="NO FILTER" path="/" element={<Articles />} />
-        {topicsList.map((ele) => {
-          return (
-            <Route
-              key={ele.slug}
-              path={`/${ele.slug}`}
-              element={<Articles topicFilter={ele.slug} />}
-            />
-          );
-        })}
+        <Route
+          key="topicSlug"
+          path={`/topic/:topicSlug`}
+          element={<Articles />}
+        />
       </Routes>
     </div>
   );
