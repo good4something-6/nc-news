@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { getArticles } from "../api";
 import { useNavigate } from "react-router-dom";
 
-const Articles = ({ setTopicFilter }) => {
+const Articles = () => {
   const [articlesList, setArticlesList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -18,8 +18,6 @@ const Articles = ({ setTopicFilter }) => {
 
   const navigate = useNavigate();
   const clickHandler = (articleId) => {
-    console.log("HERE");
-    setTopicFilter(null);
     navigate(`/articles/${articleId}`);
   };
   return (

@@ -19,17 +19,12 @@ function App() {
         setTopicsList={setTopicsList}
       />
       <Routes>
-        {/* <Route path="/" element={<Articles />} /> */}
         <Route path="/articles/:articleID" element={<SingleArticle />} />
-        <Route
-          key="NO FILTER"
-          path="/"
-          element={<Articles setTopicFilter={setTopicFilter} />}
-        />
+        <Route key="NO FILTER" path="/" element={<Articles />} />
         <Route
           key="topicSlug"
           path={`/topic/:topicSlug`}
-          element={<Articles setTopicFilter={setTopicFilter} />}
+          element={<Articles />}
         />
       </Routes>
     </div>
