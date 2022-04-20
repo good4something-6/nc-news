@@ -1,21 +1,26 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { getArticles } from "../api";
 
 const Articles = () => {
   const [articlesList, setArticlesList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const { topicSlug } = useParams();
+
   useEffect(() => {
-    getArticles().then((articles) => {
+    getArticles(topicSlug).then((articles) => {
       setArticlesList(articles);
       setIsLoading(false);
     });
-  }, []);
+  }, [topicSlug]);
 
   return (
     <section name="Articles List">
-      <header className="App-header">Latest Articles</header>
-      {isLoading ? <p class="App-header">Loading Articles</p> : null}
+      <header className="App-header">
+        Latest Articles for {!topicSlug ? "ALL topics" : `'${topicSlug}'`}
+      </header>
+      {isLoading ? <p className="App-header">Loading Articles</p> : null}
       <div id="articleListBox">
         {articlesList.map((ele) => {
           return (

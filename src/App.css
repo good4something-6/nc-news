@@ -95,3 +95,16 @@ ul {
   text-align: right;
   margin-right: 20px;
 }
+
+.selectList {
+  width: 240px;
+  height: 30px;
+  border: 1px solid #999;
+  font-size: larger;
+  background-color: rgb(250, 231, 203);
+  border-radius: 5px;
+}
+.selectList:hover {
+  background-color: rgb(255, 1, 1);
+  color: white;
+}
