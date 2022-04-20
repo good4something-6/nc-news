@@ -82,6 +82,11 @@ ul {
   border-radius: 0.6em;
 }
 
+.articleCardViewButton:hover {
+  background-color: rgb(255, 1, 1);
+  color: white;
+}
+
 .articleCardButtonLi {
   text-align: right;
   margin-right: 20px;
