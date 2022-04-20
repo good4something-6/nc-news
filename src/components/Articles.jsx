@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { getArticles } from "../api";
 import { useNavigate } from "react-router-dom";
 
@@ -6,12 +7,14 @@ const Articles = () => {
   const [articlesList, setArticlesList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const { topicSlug } = useParams();
+
   useEffect(() => {
-    getArticles().then((articles) => {
+    getArticles(topicSlug).then((articles) => {
       setArticlesList(articles);
       setIsLoading(false);
     });
-  }, []);
+  }, [topicSlug]);
 
   const navigate = useNavigate();
   const clickHandler = (articleId) => {
@@ -20,7 +23,9 @@ const Articles = () => {
   };
   return (
     <section name="Articles List">
-      <header className="App-header">Latest Articles</header>
+      <header className="App-header">
+        Latest Articles for {!topicSlug ? "ALL topics" : `'${topicSlug}'`}
+      </header>
       {isLoading ? <p className="App-header">Loading Articles</p> : null}
       <div id="articleListBox">
         {articlesList.map((ele) => {
