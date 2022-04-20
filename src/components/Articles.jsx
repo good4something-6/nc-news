@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getArticles } from "../api";
 
-const Articles = () => {
+const Articles = ({ topicFilter }) => {
   const [articlesList, setArticlesList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -12,12 +12,18 @@ const Articles = () => {
     });
   }, []);
 
+  const filteredList = articlesList.filter((ele) => {
+    return !topicFilter || ele.topic === topicFilter;
+  });
+
   return (
     <section name="Articles List">
-      <header className="App-header">Latest Articles</header>
-      {isLoading ? <p class="App-header">Loading Articles</p> : null}
+      <header className="App-header">
+        Latest Articles for {!topicFilter ? "ALL topics" : `'${topicFilter}'`}
+      </header>
+      {isLoading ? <p className="App-header">Loading Articles</p> : null}
       <div id="articleListBox">
-        {articlesList.map((ele) => {
+        {filteredList.map((ele) => {
           return (
             <div key={"articleCard" + ele.article_id} className="articleCard">
               <ul>
