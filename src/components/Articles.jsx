@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getArticles } from "../api";
+import { useNavigate } from "react-router-dom";
 
 const Articles = () => {
   const [articlesList, setArticlesList] = useState([]);
@@ -12,10 +13,15 @@ const Articles = () => {
     });
   }, []);
 
+  const navigate = useNavigate();
+  const clickHandler = (articleId) => {
+    console.log(articleId);
+    navigate(`/articles/${articleId}`);
+  };
   return (
     <section name="Articles List">
       <header className="App-header">Latest Articles</header>
-      {isLoading ? <p class="App-header">Loading Articles</p> : null}
+      {isLoading ? <p className="App-header">Loading Articles</p> : null}
       <div id="articleListBox">
         {articlesList.map((ele) => {
           return (
@@ -26,7 +32,12 @@ const Articles = () => {
                 <li className="articleCardCreated">Date: {ele.created_at}</li>
                 <li className="articleCardVotes">votes: {ele.votes}</li>
                 <li className="articleCardButtonLi">
-                  <button className="articleCardViewButton">View News</button>
+                  <button
+                    className="articleCardViewButton"
+                    onClick={() => clickHandler(ele.article_id)}
+                  >
+                    View News
+                  </button>
                 </li>
               </ul>
             </div>
