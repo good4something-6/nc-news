@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
+import { getArticles } from "../api";
 
 const Articles = () => {
   const [articlesList, setArticlesList] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://be-nc-news-mw.herokuapp.com/api/articles")
-      .then((response) => response.json())
-      .then((data) => {
-        setArticlesList(data.articles);
-      });
+    getArticles().then((articles) => {
+      setArticlesList(articles);
+      setIsLoading(false);
+    });
   }, []);
 
   return (
     <section name="Articles List">
       <header className="App-header">Latest Articles</header>
+      {isLoading ? <p class="App-header">Loading Articles</p> : null}
       <div id="articleListBox">
         {articlesList.map((ele) => {
           return (
