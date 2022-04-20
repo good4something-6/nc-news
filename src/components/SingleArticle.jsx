@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getSingleArticle } from "../api";
 import { useParams } from "react-router-dom";
 import "./singleArticle.css";
+import { useNavigate } from "react-router-dom";
 
 const SingleArticle = () => {
   const { articleID } = useParams();
@@ -12,6 +13,10 @@ const SingleArticle = () => {
     });
   }, [articleID]);
 
+  const navigate = useNavigate();
+  const clickHandler = () => {
+    navigate("/");
+  };
   return (
     <>
       <div>
@@ -19,6 +24,11 @@ const SingleArticle = () => {
       </div>
       <div className="grid-container">
         <div id="gridBackground" className="grid-item"></div>
+        <div id="gridHomeButton" className="grid-item">
+          <button id="homeButton" onClick={clickHandler}>
+            Show All News Articles
+          </button>
+        </div>
         <div id="gridTitle" className="grid-item">
           {singleArticle.title}
         </div>
