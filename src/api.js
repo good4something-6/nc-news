@@ -18,3 +18,11 @@ export const getTopics = () => {
     return data.topics;
   });
 };
+
+export const updateVotes = (articleId, number) => {
+  return articlesApi
+    .patch(`/articles/${articleId}`, { inc_votes: number })
+    .then(({ data }) => {
+      return data.article;
+    });
+};
