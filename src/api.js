@@ -13,6 +13,12 @@ export const getArticles = (topicFilter) => {
   });
 };
 
+export const getSingleArticle = (articleID) => {
+  return articlesApi.get(`/articles/${articleID}`).then(({ data }) => {
+    return data.article;
+  });
+};
+
 export const getTopics = () => {
   return articlesApi.get("/topics").then(({ data }) => {
     return data.topics;

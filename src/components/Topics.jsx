@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import TopicSelectDropdown from "./TopicSelectDropdown";
 import { getTopics } from "../api";
 
-const Topics = ({ setTopicFilter, topicsList, setTopicsList }) => {
+const Topics = ({ topicFilter, setTopicFilter, topicsList, setTopicsList }) => {
   useEffect(() => {
     getTopics().then((topics) => {
       setTopicsList(topics);

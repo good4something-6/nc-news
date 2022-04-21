@@ -4,7 +4,7 @@ const TopicSelectDropdown = ({ setTopicFilter, topicsList }) => {
   const navigate = useNavigate();
   return (
     <p>
-      Topic Filter:
+      Display articles with the chosen topic :
       <select
         className="selectList"
         defaultValue={"Info"}
@@ -14,10 +14,10 @@ const TopicSelectDropdown = ({ setTopicFilter, topicsList }) => {
         }}
       >
         <option key="Info" value="Info" disabled>
-          Click to select topic filter
+          Click to choose a topic
         </option>
         <option key="NONE" value="/">
-          Show All Topics
+          All Topics
         </option>
         {topicsList.map((ele) => {
           return (
