@@ -15,7 +15,7 @@
 #gridBackground {
   background: #c25e59;
   grid-row-start: 1;
-  grid-row-end: 5;
+  grid-row-end: 6;
   grid-column-start: 2;
   grid-column-end: 5;
 }
@@ -38,7 +38,7 @@
 #gridBody {
   background: rgb(250, 231, 203);
   grid-row-start: 3;
-  grid-row-end: 5;
+  grid-row-end: 6;
   grid-column-start: 2;
   grid-column-end: 5;
   font-size: 2rem;
@@ -127,13 +127,31 @@
   color: white;
 }
 
-#commentsButton {
+#voteButton {
   font-size: 1rem;
   padding: 0.5em;
   background-color: rgb(250, 231, 203);
   border-radius: 10px;
 }
 
+#voteButton:hover {
+  background-color: rgb(255, 1, 1);
+  color: white;
+}
+
+#voteButton:disabled {
+  font-size: 1rem;
+  padding: 0.5em;
+  background-color: rgb(250, 231, 203);
+  border-radius: 10px;
+  color: grey;
+}
+#commentsButton {
+  font-size: 1rem;
+  padding: 0.5em;
+  background-color: rgb(250, 231, 203);
+  border-radius: 10px;
+}
 #commentsButton:hover {
   background-color: rgb(255, 1, 1);
   color: white;
