@@ -8,6 +8,7 @@ const SingleArticle = () => {
   const [singleArticle, setSingleArticle] = useState({});
   const [votes, setVotes] = useState();
   const [voteErr, setVoteErr] = useState();
+  const [votedFlag, setVotedFlag] = useState(false);
 
   useEffect(() => {
     getSingleArticle(articleID).then((article) => {
@@ -23,6 +24,7 @@ const SingleArticle = () => {
 
   const voteHandler = (article_id, voteInc) => {
     setVotes((currVotes) => currVotes + voteInc);
+    setVotedFlag(true);
     setVoteErr(null);
     updateVotesAPI(article_id, voteInc)
       .then((response) => {
@@ -31,6 +33,7 @@ const SingleArticle = () => {
       .catch(() => {
         setVotes((currVotes) => currVotes - voteInc);
         setVoteErr("Voting failed");
+        setVotedFlag(false);
       });
   };
 
@@ -55,11 +58,12 @@ const SingleArticle = () => {
             <li>
               <button
                 id="voteButton"
+                disabled={votedFlag}
                 onClick={() => {
                   voteHandler(singleArticle.article_id, 1);
                 }}
               >
-                Vote For Article
+                {votedFlag ? "Voted" : "Vote For Article"}
               </button>
             </li>
           </ul>

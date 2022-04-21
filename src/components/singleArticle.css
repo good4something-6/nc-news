@@ -138,3 +138,11 @@
   background-color: rgb(255, 1, 1);
   color: white;
 }
+
+#voteButton:disabled {
+  font-size: 1rem;
+  padding: 0.5em;
+  background-color: rgb(250, 231, 203);
+  border-radius: 10px;
+  color: grey;
+}
