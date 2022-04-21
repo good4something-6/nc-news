@@ -126,3 +126,15 @@
   background-color: rgb(255, 1, 1);
   color: white;
 }
+
+#commentsButton {
+  font-size: 1rem;
+  padding: 0.5em;
+  background-color: rgb(250, 231, 203);
+  border-radius: 10px;
+}
+
+#commentsButton:hover {
+  background-color: rgb(255, 1, 1);
+  color: white;
+}

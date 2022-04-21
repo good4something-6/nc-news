@@ -3,10 +3,12 @@ import { getSingleArticle } from "../api";
 import { useParams } from "react-router-dom";
 import "./singleArticle.css";
 import { useNavigate } from "react-router-dom";
+import Comments from "./Comments";
 
 const SingleArticle = () => {
   const { articleID } = useParams();
   const [singleArticle, setSingleArticle] = useState({});
+  const [commentsFlag, setCommentsFlag] = useState(false);
   useEffect(() => {
     getSingleArticle(articleID).then((article) => {
       setSingleArticle(article);
@@ -19,9 +21,6 @@ const SingleArticle = () => {
   };
   return (
     <>
-      <div>
-        <p></p>
-      </div>
       <div className="grid-container">
         <div id="gridBackground" className="grid-item"></div>
         <div id="gridHomeButton" className="grid-item">
@@ -56,11 +55,21 @@ const SingleArticle = () => {
             <li>Comments: {singleArticle.comment_count}</li>
             <li>----------</li>
             <li>
-              <button>Button Not working yet</button>
+              <button
+                id="commentsButton"
+                onClick={() => {
+                  setCommentsFlag((status) => {
+                    return !status;
+                  });
+                }}
+              >
+                {commentsFlag ? "Hide Comments" : "Show Comments"}
+              </button>
             </li>
           </ul>
         </div>
       </div>
+      {commentsFlag ? <Comments articleID={articleID} /> : null}
     </>
   );
 };
