@@ -39,7 +39,11 @@ const Articles = () => {
         <div id="articleListBox">
           {articlesList.map((ele) => {
             return (
-              <div key={"articleCard" + ele.article_id} className="articleCard">
+              <div
+                key={"articleCard" + ele.article_id}
+                className="articleCard"
+                onClick={() => clickHandler(ele.article_id)}
+              >
                 <ul>
                   <li className="articleCardTitle">{ele.title}</li>
                   <li className="articleCardTopic">topic: {ele.topic}</li>
