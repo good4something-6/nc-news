@@ -54,7 +54,7 @@ const SingleArticle = () => {
             <li>
               {voteErr ? " Voting Failed. Please retry" : "Votes: " + votes}
             </li>
-            <li>----------</li>
+            <li>------------</li>
             <li>
               <button
                 id="voteButton"
