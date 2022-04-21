@@ -53,10 +53,12 @@ const SingleArticle = () => {
         </div>
         <div id="gridComments" className="grid-item">
           <ul>
-            <li>Comments</li>
-            <li>{singleArticle.comment_count}</li>
+            <li>Comments: {singleArticle.comment_count}</li>
+            <li>----------</li>
+            <li>
+              <button>Button Not working yet</button>
+            </li>
           </ul>
-          <button>Button Not working yet</button>
         </div>
       </div>
     </>
