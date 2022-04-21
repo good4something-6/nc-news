@@ -1,0 +1,36 @@
+.gridComments {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-auto-rows: minmax(50px, auto);
+}
+
+#gridCommentBody {
+  background: rgb(250, 231, 203);
+  border: solid;
+  grid-row: 1/2;
+  grid-column: 2/3;
+  font-size: 1rem;
+  padding: 0 20px 0 20px;
+  margin: 0 2rem 1rem 0.2rem;
+  height: 60px;
+  overflow: hidden;
+}
+
+#gridCommentBody:hover {
+  height: auto;
+  min-height: 60px;
+  transition: 0.5s;
+}
+
+#gridCommentInfo {
+  background: rgb(250, 231, 203);
+  border: solid;
+  grid-row: 1/2;
+  grid-column: 1/2;
+  font-size: 1rem;
+  padding: 0 20px 0 20px;
+  margin: 0 0rem 1rem 2rem;
+  text-align: left;
+  height: auto;
+  width: 100px;
+}

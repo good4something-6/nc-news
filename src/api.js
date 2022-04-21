@@ -19,6 +19,16 @@ export const getSingleArticle = (articleID) => {
   });
 };
 
+export const getArticleComments = (articleID) => {
+  return articlesApi.get(`/articles/${articleID}/comments`).then(({ data }) => {
+    let commentsArray = [...data.comments];
+    commentsArray.sort((a, b) => {
+      return new Date(b.created_at) - new Date(a.created_at);
+    });
+    return commentsArray;
+  });
+};
+
 export const getTopics = () => {
   return articlesApi.get("/topics").then(({ data }) => {
     return data.topics;

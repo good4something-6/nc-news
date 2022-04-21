@@ -21,7 +21,7 @@ const SingleArticle = () => {
 
   const navigate = useNavigate();
   const clickHandlerHome = () => {
-    navigate("/");
+    navigate(-1);
   };
 
   const voteHandler = (article_id, voteInc) => {
