@@ -45,6 +45,7 @@ const Comments = ({ articleID }) => {
           Author<br></br>Date
         </div>
         <div id="gridCommentBody">Comments</div>
+        <div id="gridCommentVotes">Votes</div>
       </div>
 
       {comments.map((ele, ind) => {
@@ -57,6 +58,7 @@ const Comments = ({ articleID }) => {
               </ul>
             </div>
             <div id="gridCommentBody">{ele.body}</div>
+            <div id="gridCommentVotes">{ele.votes}</div>
           </div>
         );
       })}
