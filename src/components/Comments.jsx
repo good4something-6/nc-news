@@ -5,7 +5,7 @@ import AddCommentForm from "./AddCommentForm";
 
 const Comments = ({ articleID }) => {
   const [comments, setComments] = useState([]);
-  const [addCommentsFlag, setAddCommentsFlag] = useState(false);
+  const [addCommentsFlag, setAddCommentsFlag] = useState(true);
 
   useEffect(() => {
     getArticleComments(articleID).then((commentsData) => {
