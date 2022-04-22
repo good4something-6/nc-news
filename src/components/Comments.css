@@ -22,6 +22,27 @@
   transition: 0.5s;
 }
 
+#gridAddCommentForm {
+  background: rgb(250, 231, 203);
+  border: solid;
+  grid-row: 1/2;
+  grid-column: 2/3;
+  font-size: 1rem;
+  padding: 0 20px 0 20px;
+  margin: 0 2rem 1rem 0.2rem;
+  height: auto;
+  overflow: hidden;
+}
+
+#commentText {
+  width: 90%;
+  max-width: 90%;
+  min-width: 90%;
+  max-height: 30%;
+  margin-top: 20px;
+  height: 100px;
+}
+
 #gridCommentInfo {
   background: rgb(250, 231, 203);
   border: solid;
@@ -33,4 +54,31 @@
   text-align: left;
   height: auto;
   width: 100px;
+}
+
+#gridCommentButton {
+  background: #c25e59;
+  border: none;
+  grid-row: 1/2;
+  grid-column: 1/2;
+  font-size: 1rem;
+  padding: 0 20px 0 20px;
+  margin: 0 0rem 1rem 2rem;
+  text-align: center;
+  height: auto;
+  width: 100px;
+  border-radius: 10px;
+}
+
+#addCommentButton {
+  font-size: 1rem;
+  padding: 0.5em;
+  background-color: rgb(250, 231, 203);
+  border-radius: 10px;
+  margin: 1rem 1rem 1rem 0rem;
+}
+
+#addCommentButton:hover {
+  background-color: rgb(255, 1, 1);
+  color: white;
 }

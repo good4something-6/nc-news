@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { getArticleComments } from "../api";
 import "./Comments.css";
+import AddCommentForm from "./AddCommentForm";
 
 const Comments = ({ articleID }) => {
   const [comments, setComments] = useState([]);
+  const [addCommentsFlag, setAddCommentsFlag] = useState(false);
+
   useEffect(() => {
     getArticleComments(articleID).then((commentsData) => {
       setComments(commentsData);
@@ -12,6 +15,26 @@ const Comments = ({ articleID }) => {
 
   return (
     <>
+      <div className="gridComments" key={"grid_addComment"}>
+        <div id="gridCommentButton">
+          <button
+            id="addCommentButton"
+            onClick={() => {
+              setAddCommentsFlag((flag) => {
+                return !flag;
+              });
+            }}
+          >
+            {addCommentsFlag ? "Close Comment Form" : "Add a Comment"}
+          </button>
+        </div>
+        <div id="gridAddCommentForm">
+          {addCommentsFlag ? (
+            <AddCommentForm articleID={articleID} username={"bobduck"} />
+          ) : null}
+        </div>
+      </div>
+
       <div className="gridComments" key={"grid_title"}>
         <div id="gridCommentInfo">
           Author<br></br>Date
