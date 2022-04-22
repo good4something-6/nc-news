@@ -42,3 +42,15 @@ export const updateVotesAPI = (articleId, number) => {
       return data.article;
     });
 };
+
+export const postArticleCommentsAPI = (articleId, username, commentText) => {
+  let reqBody = {
+    body: commentText,
+    username: username,
+  };
+  return articlesApi
+    .post(`/articles/${articleId}/comments`, reqBody)
+    .then((response) => {
+      return response.data.restaurant;
+    });
+};
