@@ -44,22 +44,13 @@ export const updateVotesAPI = (articleId, number) => {
 };
 
 export const postArticleCommentsAPI = (articleId, username, commentText) => {
-  console.log("DOING", articleId, username, commentText);
   let reqBody = {
     body: commentText,
     username: username,
   };
-  return (
-    axios({
-      method: "post",
-      url: `https://be-nc-news-mw.herokuapp.com/api/articles/${articleId}/comments`,
-      data: reqBody,
-    })
-      // articlesApi
-      //   // .get(`/articles/${articleId}/comments`)
-      //   .post(`/articles/${articleId}/comments`, reqBody)
-      .then((response) => {
-        return response.data;
-      })
-  );
+  return articlesApi
+    .post(`/articles/${articleId}/comments`, reqBody)
+    .then((response) => {
+      return response.data.restaurant;
+    });
 };

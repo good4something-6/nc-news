@@ -1,15 +1,28 @@
 import { useState } from "react";
 import { postArticleCommentsAPI } from "../api";
 
-const AddCommentForm = ({ articleID, username }) => {
-  const [commentToAdd, setCommentToAdd] = useState("");
+const AddCommentForm = ({ articleID, username, comments, setComments }) => {
+  const [commentTextToAdd, setCommentTextToAdd] = useState("");
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
 
-    postArticleCommentsAPI(articleID, username, commentToAdd)
+    setComments((comments) => {
+      return [
+        {
+          author: username,
+          body: commentTextToAdd,
+          created_at: "Just Now",
+        },
+        ...comments,
+      ];
+    });
+
+    postArticleCommentsAPI(articleID, username, commentTextToAdd)
       .then((response) => {
-        console.log("RESPONSE", response);
+        setComments((comments) => {
+          return [response, ...comments];
+        });
       })
       .catch((err) => {
         console.log("ERROR", err);
@@ -17,7 +30,7 @@ const AddCommentForm = ({ articleID, username }) => {
   };
 
   const changeHandler = (e) => {
-    setCommentToAdd(e.target.value);
+    setCommentTextToAdd(e.target.value);
   };
 
   return (

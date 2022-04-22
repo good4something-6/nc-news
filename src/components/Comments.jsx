@@ -30,7 +30,12 @@ const Comments = ({ articleID }) => {
         </div>
         <div id="gridAddCommentForm">
           {addCommentsFlag ? (
-            <AddCommentForm articleID={articleID} username={"bobduck"} />
+            <AddCommentForm
+              articleID={articleID}
+              username={"jessjelly"}
+              comments={comments}
+              setComments={setComments}
+            />
           ) : null}
         </div>
       </div>
@@ -42,9 +47,9 @@ const Comments = ({ articleID }) => {
         <div id="gridCommentBody">Comments</div>
       </div>
 
-      {comments.map((ele) => {
+      {comments.map((ele, ind) => {
         return (
-          <div className="gridComments" key={"grid_" + ele.comment_id}>
+          <div className="gridComments" key={"grid_" + ele.comment_id + ind}>
             <div id="gridCommentInfo">
               <ul>
                 <li>{ele.author}</li>
