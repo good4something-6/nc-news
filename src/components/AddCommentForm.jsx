@@ -21,7 +21,7 @@ const AddCommentForm = ({ articleID, username, comments, setComments }) => {
     postArticleCommentsAPI(articleID, username, commentTextToAdd)
       .then((response) => {
         setComments((comments) => {
-          return [response, ...comments];
+          return [response, ...comments.slice(1)];
         });
       })
       .catch((err) => {
