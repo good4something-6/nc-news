@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./singleArticle.css";
+import Comments from "./Comments";
 import { getSingleArticle, updateVotesAPI } from "../api";
 
 const SingleArticle = () => {
   const { articleID } = useParams();
   const [singleArticle, setSingleArticle] = useState({});
+  const [commentsFlag, setCommentsFlag] = useState(false);
   const [votes, setVotes] = useState();
   const [voteErr, setVoteErr] = useState();
   const [votedFlag, setVotedFlag] = useState(false);
@@ -19,7 +21,7 @@ const SingleArticle = () => {
 
   const navigate = useNavigate();
   const clickHandlerHome = () => {
-    navigate("/");
+    navigate(-1);
   };
 
   const voteHandler = (article_id, voteInc) => {
@@ -39,9 +41,6 @@ const SingleArticle = () => {
 
   return (
     <>
-      <div>
-        <p></p>
-      </div>
       <div className="grid-container">
         <div id="gridBackground" className="grid-item"></div>
         <div id="gridHomeButton" className="grid-item">
@@ -85,12 +84,24 @@ const SingleArticle = () => {
         </div>
         <div id="gridComments" className="grid-item">
           <ul>
-            <li>Comments</li>
-            <li>{singleArticle.comment_count}</li>
+            <li>Comments: {singleArticle.comment_count}</li>
+            <li>----------</li>
+            <li>
+              <button
+                id="commentsButton"
+                onClick={() => {
+                  setCommentsFlag((status) => {
+                    return !status;
+                  });
+                }}
+              >
+                {commentsFlag ? "Hide Comments" : "Show Comments"}
+              </button>
+            </li>
           </ul>
-          <button>Button Not working yet</button>
         </div>
       </div>
+      {commentsFlag ? <Comments articleID={articleID} /> : null}
     </>
   );
 };

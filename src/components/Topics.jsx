@@ -14,6 +14,7 @@ const Topics = ({ topicFilter, setTopicFilter, topicsList, setTopicsList }) => {
     <TopicSelectDropdown
       setTopicFilter={setTopicFilter}
       topicsList={topicsList}
+      topicFilter={topicFilter}
     />
   );
 };

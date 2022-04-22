@@ -4,10 +4,9 @@ import { getArticles } from "../api";
 import { useNavigate } from "react-router-dom";
 import Topics from "./Topics";
 
-const Articles = () => {
+const Articles = ({ topicFilter, setTopicFilter }) => {
   const [articlesList, setArticlesList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [topicFilter, setTopicFilter] = useState(null);
   const [topicsList, setTopicsList] = useState([]);
 
   const { topicSlug } = useParams();
