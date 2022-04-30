@@ -1,5 +1,5 @@
 #gridBackground {
-  background: #c25e59;
+  background: #4b52bd;
 }
 
 @media only screen and (min-width: 800px) {
@@ -137,15 +137,15 @@
 }
 
 #gridTitle {
-  background: #c25e59;
+  background: #4b52bd;
 }
 
 #gridTitle {
   font-size: 2rem;
   font-weight: bold;
-  border-bottom: 3px solid rgb(163, 105, 105);
-  border-right: 3px solid rgb(163, 105, 105);
-  border-left: 3px solid rgb(163, 105, 105);
+  border-bottom: 3px solid #3d4394;
+  border-right: 3px solid #4b52bd;
+  border-left: 3px solid #4b52bd;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -185,12 +185,12 @@
 }
 
 #gridVotes {
-  background: #c25e59;
+  background: #4b52bd;
   font-size: 1rem;
 }
 
 #gridComments {
-  background: #c25e59;
+  background: #4b52bd;
   font-size: 1rem;
 }
 

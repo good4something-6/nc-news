@@ -4,7 +4,7 @@ body {
 
 .App {
   text-align: center;
-  background-color: rgb(195, 21, 15);
+  background-color: rgb(50, 33, 202);
 }
 
 h1 {
@@ -34,7 +34,7 @@ ul {
 }
 
 .articleCard {
-  background: #c25e59;
+  background: #4b52bd;
   padding: 0.4rem;
   margin: 0.2rem;
   width: 20%;
