@@ -1,5 +1,5 @@
 #gridBackground {
-  background: #4b52bd;
+  background: rgb(184, 246, 241);
 }
 
 @media only screen and (min-width: 800px) {
@@ -43,11 +43,15 @@
   #gridVotes {
     grid-row: 3/4;
     grid-column: 1/2;
+    margin-left: 2em;
+    margin-right: 0em;
   }
 
   #gridComments {
     grid-row: 4/5;
     grid-column: 1/2;
+    margin-left: 2em;
+    margin-right: 0em;
   }
 
   #gridHomeButton {
@@ -59,10 +63,10 @@
     font-size: 1.5rem;
     border-radius: 20px;
     padding: 0.5em;
-    background-color: rgb(250, 231, 203);
+    background-color: rgb(92, 181, 255);
   }
 }
-/* END OF MIN-WIDTH 600px */
+/* END OF MIN-WIDTH 800px */
 
 @media only screen and (max-width: 800px) {
   .grid-container {
@@ -123,10 +127,10 @@
     font-size: 1rem;
     border-radius: 10px;
     padding: 0.5em;
-    background-color: rgb(250, 231, 203);
+    background-color: rgb(92, 181, 255);
   }
 }
-/* END OF MAX_WIDTH 600 */
+/* END OF MAX_WIDTH 800 */
 
 .grid-item {
   font-weight: normal;
@@ -137,21 +141,19 @@
 }
 
 #gridTitle {
-  background: #4b52bd;
+  background: rgb(184, 246, 241);
 }
 
 #gridTitle {
   font-size: 2rem;
   font-weight: bold;
-  border-bottom: 3px solid #3d4394;
-  border-right: 3px solid #4b52bd;
-  border-left: 3px solid #4b52bd;
+  border-bottom: 5px solid rgb(121, 87, 87);
   margin-top: 0;
   margin-bottom: 0;
 }
 
 #gridBody {
-  background: rgb(250, 231, 203);
+  background: #ffffff;
   margin-left: 2rem;
   margin-right: 2rem;
   margin-bottom: 2rem;
@@ -160,7 +162,7 @@
 }
 
 #gridAuthor {
-  background: rgb(250, 231, 203);
+  background: #ffffff;
   font-size: 1rem;
   padding-top: 0;
   padding-bottom: 0;
@@ -169,7 +171,7 @@
 }
 
 #gridTopic {
-  background: rgb(250, 231, 203);
+  background: #ffffff;
   font-size: 1rem;
   padding-top: 0;
   padding-bottom: 0;
@@ -177,7 +179,7 @@
 }
 
 #gridCreated {
-  background: rgb(250, 231, 203);
+  background: #ffffff;
   font-size: 1rem;
   padding-top: 0;
   padding-bottom: 0;
@@ -185,12 +187,12 @@
 }
 
 #gridVotes {
-  background: #4b52bd;
+  background: rgb(184, 246, 241);
   font-size: 1rem;
 }
 
 #gridComments {
-  background: #4b52bd;
+  background: rgb(184, 246, 241);
   font-size: 1rem;
 }
 
@@ -206,36 +208,36 @@
 }
 
 #homeButton:hover {
-  background-color: rgb(255, 1, 1);
+  background-color: rgb(1, 141, 255);
   color: white;
 }
 
 #voteButton {
   font-size: 1rem;
   padding: 0.5em;
-  background-color: rgb(250, 231, 203);
+  background-color: rgb(92, 181, 255);
   border-radius: 10px;
 }
 
 #voteButton:hover {
-  background-color: rgb(255, 1, 1);
+  background-color: rgb(1, 141, 255);
   color: white;
 }
 
 #voteButton:disabled {
   font-size: 1rem;
   padding: 0.5em;
-  background-color: rgb(250, 231, 203);
+  background-color: #ffffff;
   border-radius: 10px;
   color: grey;
 }
 #commentsButton {
   font-size: 1rem;
   padding: 0.5em;
-  background-color: rgb(250, 231, 203);
+  background-color: rgb(92, 181, 255);
   border-radius: 10px;
 }
 #commentsButton:hover {
-  background-color: rgb(255, 1, 1);
+  background-color: rgb(1, 141, 255);
   color: white;
 }

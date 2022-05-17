@@ -62,7 +62,17 @@ const SingleArticle = () => {
                   voteHandler(singleArticle.article_id, 1);
                 }}
               >
-                {votedFlag ? "Voted" : "Vote For Article"}
+                {votedFlag ? "Voted" : "Vote +"}
+              </button>
+              <button
+                id="voteButton"
+                disabled={votedFlag}
+                hidden={votedFlag}
+                onClick={() => {
+                  voteHandler(singleArticle.article_id, -1);
+                }}
+              >
+                {votedFlag ? "Voted" : "Vote -"}
               </button>
             </li>
           </ul>

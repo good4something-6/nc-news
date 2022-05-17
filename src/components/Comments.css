@@ -5,26 +5,30 @@
 }
 
 #gridCommentBody {
-  background: rgb(250, 231, 203);
+  background: rgb(184, 246, 241);
   border: solid;
   grid-row: 1/2;
   grid-column: 2/3;
   font-size: 1rem;
   padding: 0 20px 0 20px;
-  margin: 0 2rem 1rem 0.2rem;
+  margin: 0 0rem 0.5rem 0.2rem;
   height: 60px;
   overflow: hidden;
+  border-radius: 0.6em;
+  min-width: 300px;
 }
 
 #gridCommentVotes {
-  background: rgb(250, 231, 203);
+  background: rgb(184, 246, 241);
   border: solid;
   grid-row: 1/2;
   grid-column: 3/4;
   font-size: 1rem;
   padding: 20px 20px 0 20px;
-  margin: 0 2rem 1rem 0.2rem;
+  margin: 0 2rem 0.5rem 0.2rem;
   height: auto;
+  border-radius: 0.6em;
+  min-width: 50px;
 }
 
 #gridCommentBody:hover {
@@ -34,15 +38,17 @@
 }
 
 #gridAddCommentForm {
-  background: rgb(250, 231, 203);
+  background: rgb(184, 246, 241);
   border: solid;
   grid-row: 1/2;
-  grid-column: 2/3;
+  grid-column: 2/4;
   font-size: 1rem;
   padding: 0 20px 0 20px;
   margin: 0 2rem 1rem 0.2rem;
   height: auto;
   overflow: hidden;
+  border-radius: 0.6em;
+  min-width: 300px;
 }
 
 #commentText {
@@ -52,23 +58,25 @@
   max-height: 30%;
   margin-top: 20px;
   height: 100px;
+  border-radius: 0.6em;
 }
 
 #gridCommentInfo {
-  background: rgb(250, 231, 203);
+  background: rgb(184, 246, 241);
   border: solid;
   grid-row: 1/2;
   grid-column: 1/2;
   font-size: 1rem;
   padding: 0 20px 0 20px;
-  margin: 0 0rem 1rem 2rem;
+  margin: 0 0rem 0.5rem 2rem;
   text-align: left;
   height: auto;
-  width: 100px;
+  border-radius: 0.6em;
+  min-width: 100px;
 }
 
 #gridCommentButton {
-  background: #4b52bd;
+  background: rgb(184, 246, 241);
   border: none;
   grid-row: 1/2;
   grid-column: 1/2;
@@ -76,20 +84,20 @@
   padding: 0 20px 0 20px;
   margin: 0 0rem 1rem 2rem;
   text-align: center;
-  height: auto;
-  width: 100px;
+  height: 110px;
   border-radius: 10px;
+  min-width: 107px;
 }
 
 #addCommentButton {
   font-size: 1rem;
   padding: 0.5em;
-  background-color: rgb(250, 231, 203);
+  background-color: rgb(92, 181, 255);
   border-radius: 10px;
-  margin: 1rem 1rem 1rem 0rem;
+  margin: 1rem 1rem 1rem 0.7rem;
 }
 
 #addCommentButton:hover {
-  background-color: rgb(255, 1, 1);
+  background-color: rgb(1, 69, 255);
   color: white;
 }

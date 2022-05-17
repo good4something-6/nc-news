@@ -44,7 +44,7 @@ const AddCommentForm = ({ articleID, username, comments, setComments }) => {
           onChange={changeHandler}
         ></textarea>
         <br></br>
-        <input type="submit" value="submit"></input>
+        <input type="submit" value="submit comment"></input>
       </form>
     </div>
   );
