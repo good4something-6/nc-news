@@ -75,6 +75,31 @@
   min-width: 100px;
 }
 
+#gridCommentDelete {
+  background: yellow;
+  border: solid;
+  grid-row: 2/3;
+  grid-column: 2/3;
+  padding: 0px 20px 0 20px;
+  margin: 0 2rem 2rem 0.2rem;
+  height: auto;
+  border-radius: 0.6em;
+  max-width: 100px;
+}
+
+#gridCommentXVotes {
+  background: rgb(184, 246, 241);
+  border: solid;
+  grid-row: 1/2;
+  grid-column: 3/4;
+  font-size: 1rem;
+  padding: 20px 20px 0 20px;
+  margin: 0 2rem 0.5rem 0.2rem;
+  height: auto;
+  border-radius: 0.6em;
+  min-width: 50px;
+}
+
 #gridCommentButton {
   background: rgb(184, 246, 241);
   border: none;

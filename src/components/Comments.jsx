@@ -6,6 +6,7 @@ import AddCommentForm from "./AddCommentForm";
 const Comments = ({ articleID }) => {
   const [comments, setComments] = useState([]);
   const [addCommentsFlag, setAddCommentsFlag] = useState(true);
+  const currUser = "jessjelly";
 
   useEffect(() => {
     getArticleComments(articleID).then((commentsData) => {
@@ -32,7 +33,7 @@ const Comments = ({ articleID }) => {
           {addCommentsFlag ? (
             <AddCommentForm
               articleID={articleID}
-              username={"jessjelly"}
+              username={currUser}
               comments={comments}
               setComments={setComments}
             />
@@ -59,6 +60,21 @@ const Comments = ({ articleID }) => {
             </div>
             <div id="gridCommentBody">{ele.body}</div>
             <div id="gridCommentVotes">{ele.votes}</div>
+            {ele.author === currUser ? (
+              <div id="gridCommentDelete">
+                <button
+                  id="commentsButton"
+                  onClick={() => {
+                    console.log("Clicked");
+                    // setCommentsFlag((status) => {
+                    //   return !status;
+                    // });
+                  }}
+                >
+                  Delete your comment
+                </button>
+              </div>
+            ) : null}
           </div>
         );
       })}
