@@ -46,7 +46,9 @@ const Articles = ({ topicFilter, setTopicFilter }) => {
                 <ul>
                   <li className="articleCardTitle">{ele.title}</li>
                   <li className="articleCardTopic">topic: {ele.topic}</li>
-                  <li className="articleCardCreated">Date: {ele.created_at}</li>
+                  <li className="articleCardCreated">
+                    Date: {ele.created_at.slice(0, 10)}
+                  </li>
                   <li className="articleCardVotes">votes: {ele.votes}</li>
                   <li className="articleCardButtonLi">
                     <button
