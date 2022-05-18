@@ -29,6 +29,11 @@ export const getArticleComments = (articleID) => {
   });
 };
 
+export const deleteArticleComment = (comment_id) => {
+  return articlesApi.delete(`/comments/${comment_id}`);
+  
+};
+
 export const getTopics = () => {
   return articlesApi.get("/topics").then(({ data }) => {
     return data.topics;

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getArticleComments } from "../api";
+import { getArticleComments, deleteArticleComment } from "../api";
 import "./Comments.css";
 import AddCommentForm from "./AddCommentForm";
 
@@ -13,6 +13,24 @@ const Comments = ({ articleID }) => {
       setComments(commentsData);
     });
   }, [articleID]);
+
+  const deleteCommentClickHandler = (comment_id) => {
+    let commentToDelete = comments.filter((ele) => {
+      return ele.comment_id === comment_id;
+    })[0];
+
+    setComments((commentsData) => {
+      return commentsData.filter((ele) => {
+        return ele.comment_id !== comment_id;
+      });
+    });
+
+    deleteArticleComment(comment_id).catch((err) => {
+      setComments((commentsData) => {
+        return [...comments, commentToDelete];
+      });
+    });
+  };
 
   return (
     <>
@@ -63,13 +81,8 @@ const Comments = ({ articleID }) => {
             {ele.author === currUser ? (
               <div id="gridCommentDelete">
                 <button
-                  id="commentsButton"
-                  onClick={() => {
-                    console.log("Clicked");
-                    // setCommentsFlag((status) => {
-                    //   return !status;
-                    // });
-                  }}
+                  id="deleteCommentButton"
+                  onClick={() => deleteCommentClickHandler(ele.comment_id)}
                 >
                   Delete your comment
                 </button>

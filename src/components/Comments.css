@@ -76,15 +76,15 @@
 }
 
 #gridCommentDelete {
-  background: yellow;
+  background: rgb(184, 246, 241);
   border: solid;
   grid-row: 2/3;
   grid-column: 2/3;
-  padding: 0px 20px 0 20px;
+  padding: 10px 10px 0 10px;
   margin: 0 2rem 2rem 0.2rem;
   height: auto;
   border-radius: 0.6em;
-  max-width: 100px;
+  max-width: 200px;
 }
 
 #gridCommentXVotes {
@@ -123,6 +123,23 @@
 }
 
 #addCommentButton:hover {
+  background-color: rgb(1, 69, 255);
+  color: white;
+}
+
+#deleteCommentButton {
+  background: rgb(92, 181, 255);
+  border: none;
+  font-size: 1rem;
+  padding: 0 20px 0 20px;
+  margin: 0 0rem 0.5rem 0rem;
+  text-align: center;
+  height: 30px;
+  border-radius: 10px;
+  min-width: 110px;
+}
+
+#deleteCommentButton:hover {
   background-color: rgb(1, 69, 255);
   color: white;
 }
