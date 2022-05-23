@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <h1>NC NEWS</h1>
-
+  
       <Routes>
         <Route path="/articles/:articleID" element={<SingleArticle />} />
         <Route

@@ -17,6 +17,11 @@ h1 {
   font-size: 4em;
 }
 
+.App-error-red {
+  font-size: 4em;
+  color: red;
+}
+
 ul {
   list-style-type: none;
   padding: 0;

@@ -11,17 +11,15 @@ const Comments = ({ articleID, comments, setComments }) => {
     getArticleComments(articleID).then((commentsData) => {
       setComments(commentsData);
     });
-  }, [articleID, comments, setComments]);
+  }, [articleID, setComments]);
 
   const deleteCommentClickHandler = (comment_id) => {
     let commentToDelete = comments.filter((ele) => {
       return ele.comment_id === comment_id;
     })[0];
 
-    setComments((commentsData) => {
-      return commentsData.filter((ele) => {
-        return ele.comment_id !== comment_id;
-      });
+    setComments((comments) => {
+      return comments.filter((ele) => ele.comment_id !== comment_id);
     });
 
     deleteArticleComment(comment_id).catch((err) => {

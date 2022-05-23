@@ -11,7 +11,7 @@ const AddCommentForm = ({ articleID, username, comments, setComments }) => {
       author: username,
       body: commentTextToAdd,
       created_at: "Just Now",
-      comment_id: 3000000,
+      comment_id: -1,
       votes: 0,
     };
 
@@ -21,8 +21,8 @@ const AddCommentForm = ({ articleID, username, comments, setComments }) => {
 
     postArticleCommentsAPI(articleID, username, commentTextToAdd)
       .then((response) => {
-        setComments(() => {
-          return [response, ...comments];
+        setComments((comments) => {
+          return [response, ...comments.slice(1)];
         });
       })
       .catch((err) => {
@@ -44,14 +44,14 @@ const AddCommentForm = ({ articleID, username, comments, setComments }) => {
         <textarea
           id="commentText"
           name="commentText"
-          placeholder="Enter comment..."
+          placeholder="Enter comment to submit..."
           required
           onChange={changeHandler}
         ></textarea>
         <br></br>
         <input
           type="submit"
-          value="submit comment"
+          value="Submit Comment"
           id="submitCommentButton"
         ></input>
       </form>

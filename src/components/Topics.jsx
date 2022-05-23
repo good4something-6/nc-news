@@ -5,9 +5,13 @@ import { getTopics } from "../api";
 
 const Topics = ({ topicFilter, setTopicFilter, topicsList, setTopicsList }) => {
   useEffect(() => {
-    getTopics().then((topics) => {
-      setTopicsList(topics);
-    });
+    getTopics()
+      .then((topics) => {
+        setTopicsList(topics);
+      })
+      .catch(() => {
+        setTopicsList([{ slug: "Error Retrieving Topics" }]);
+      });
   }, [setTopicsList]);
 
   return (
