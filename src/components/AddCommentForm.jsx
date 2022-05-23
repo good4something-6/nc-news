@@ -6,25 +6,28 @@ const AddCommentForm = ({ articleID, username, comments, setComments }) => {
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
+    let commentToAdd = {
+      author: username,
+      body: commentTextToAdd,
+      created_at: "Just Now",
+      comment_id: 3000000,
+      votes: 0,
+    };
 
     setComments((comments) => {
-      return [
-        {
-          author: username,
-          body: commentTextToAdd,
-          created_at: "Just Now",
-        },
-        ...comments,
-      ];
+      return [commentToAdd, ...comments];
     });
 
     postArticleCommentsAPI(articleID, username, commentTextToAdd)
       .then((response) => {
-        setComments((comments) => {
-          return [response, ...comments.slice(1)];
+        setComments(() => {
+          return [response, ...comments];
         });
       })
       .catch((err) => {
+        setComments((comments) => {
+          return [...comments.slice(1)];
+        });
         console.log("ERROR", err);
       });
   };

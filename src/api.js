@@ -31,7 +31,6 @@ export const getArticleComments = (articleID) => {
 
 export const deleteArticleComment = (comment_id) => {
   return articlesApi.delete(`/comments/${comment_id}`);
-  
 };
 
 export const getTopics = () => {
@@ -56,6 +55,6 @@ export const postArticleCommentsAPI = (articleId, username, commentText) => {
   return articlesApi
     .post(`/articles/${articleId}/comments`, reqBody)
     .then((response) => {
-      return response.data.restaurant;
+      return response.data.commentPosted;
     });
 };

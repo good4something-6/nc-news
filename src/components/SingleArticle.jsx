@@ -11,17 +11,18 @@ const SingleArticle = () => {
   const [votes, setVotes] = useState();
   const [voteErr, setVoteErr] = useState();
   const [votedFlag, setVotedFlag] = useState(false);
+  const [comments, setComments] = useState([]);
 
   useEffect(() => {
     getSingleArticle(articleID).then((article) => {
       setSingleArticle(article);
       setVotes(article.votes);
     });
-  }, [articleID]);
+  }, [articleID, comments]);
 
   const navigate = useNavigate();
   const clickHandlerHome = () => {
-    navigate(-1);
+    navigate(-2);
   };
 
   const voteHandler = (article_id, voteInc) => {
@@ -111,7 +112,13 @@ const SingleArticle = () => {
           </ul>
         </div>
       </div>
-      {commentsFlag ? <Comments articleID={articleID} /> : null}
+      {commentsFlag ? (
+        <Comments
+          articleID={articleID}
+          comments={comments}
+          setComments={setComments}
+        />
+      ) : null}
     </>
   );
 };

@@ -3,8 +3,7 @@ import { getArticleComments, deleteArticleComment } from "../api";
 import "./Comments.css";
 import AddCommentForm from "./AddCommentForm";
 
-const Comments = ({ articleID }) => {
-  const [comments, setComments] = useState([]);
+const Comments = ({ articleID, comments, setComments }) => {
   const [addCommentsFlag, setAddCommentsFlag] = useState(true);
   const currUser = "jessjelly";
 
@@ -12,7 +11,7 @@ const Comments = ({ articleID }) => {
     getArticleComments(articleID).then((commentsData) => {
       setComments(commentsData);
     });
-  }, [articleID]);
+  }, [articleID, comments, setComments]);
 
   const deleteCommentClickHandler = (comment_id) => {
     let commentToDelete = comments.filter((ele) => {
@@ -26,7 +25,7 @@ const Comments = ({ articleID }) => {
     });
 
     deleteArticleComment(comment_id).catch((err) => {
-      setComments((commentsData) => {
+      setComments((comments) => {
         return [...comments, commentToDelete];
       });
     });
@@ -66,7 +65,6 @@ const Comments = ({ articleID }) => {
         <div id="gridCommentBody">Comments</div>
         <div id="gridCommentVotes">Votes</div>
       </div>
-
       {comments.map((ele, ind) => {
         return (
           <div className="gridComments" key={"grid_" + ele.comment_id + ind}>
