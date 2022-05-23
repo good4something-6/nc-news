@@ -127,7 +127,8 @@
   color: white;
 }
 
-#deleteCommentButton {
+#deleteCommentButton,
+#submitCommentButton {
   background: rgb(92, 181, 255);
   border: none;
   font-size: 1rem;
@@ -139,7 +140,8 @@
   min-width: 110px;
 }
 
-#deleteCommentButton:hover {
+#deleteCommentButton:hover,
+#submitCommentButton:hover {
   background-color: rgb(1, 69, 255);
   color: white;
 }

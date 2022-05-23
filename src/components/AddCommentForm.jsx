@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { postArticleCommentsAPI } from "../api";
+import "./Comments.css";
 
 const AddCommentForm = ({ articleID, username, comments, setComments }) => {
   const [commentTextToAdd, setCommentTextToAdd] = useState("");
@@ -30,6 +31,7 @@ const AddCommentForm = ({ articleID, username, comments, setComments }) => {
         });
         console.log("ERROR", err);
       });
+    e.target.reset();
   };
 
   const changeHandler = (e) => {
@@ -47,7 +49,11 @@ const AddCommentForm = ({ articleID, username, comments, setComments }) => {
           onChange={changeHandler}
         ></textarea>
         <br></br>
-        <input type="submit" value="submit comment"></input>
+        <input
+          type="submit"
+          value="submit comment"
+          id="submitCommentButton"
+        ></input>
       </form>
     </div>
   );
